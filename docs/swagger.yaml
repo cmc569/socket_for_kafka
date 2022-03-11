@@ -1,0 +1,1210 @@
+definitions:
+  docs.DocCancelTrading:
+    properties:
+      ordersTransactionsId:
+        type: integer
+    type: object
+  docs.DocComplaintTrading:
+    properties:
+      description:
+        description: Description 文字說明 / 選擇投訴項目先不用
+        type: string
+      image:
+        description: Image 圖片base64
+        example: base64...
+        type: string
+      ordersTransactionsId:
+        type: integer
+    type: object
+  docs.DocCreateTransaction:
+    properties:
+      amount:
+        type: number
+      coinType:
+        description: 'CoinType 法幣: TWD/USD/etc..'
+        example: TWD
+        type: string
+      coinsId:
+        type: integer
+      minAmount:
+        type: number
+      note:
+        type: string
+      price:
+        type: number
+      receiveMethodsId:
+        description: ReceiveMethodsId 查看api /api/v1/users/receive-methods 收款方式對應表
+          {id:name}
+        type: integer
+      type:
+        description: Type 1:購買 2:出售
+        type: integer
+    type: object
+  docs.DocDeleteTransaction:
+    properties:
+      id:
+        type: integer
+    type: object
+  docs.DocFinishTradingOrder:
+    properties:
+      ordersTransactionsId:
+        type: integer
+    type: object
+  docs.DocGeneralId:
+    properties:
+      id:
+        type: integer
+    type: object
+  docs.DocGetWalletAddress:
+    properties:
+      coinsId:
+        description: CoinsId 交易貨幣 1：USDT 2：ETH 3：BTC
+        type: integer
+    type: object
+  docs.DocInnerTransform:
+    properties:
+      address:
+        description: Address 錢包地址
+        type: string
+      amount:
+        description: Amount 數量
+        type: number
+      checkPayPassword:
+        description: CheckPayPassword 安全密碼
+        type: string
+      fromCoinsId:
+        description: FromCoinsId 轉出貨幣
+        type: integer
+    type: object
+  docs.DocLogTransform:
+    properties:
+      coinsId:
+        description: CoinsId 交易貨幣 0：全部 1：USDT 2：ETH 3：BTC
+        type: integer
+      limit:
+        description: Limit 每一頁顯示幾筆
+        example: 15
+        type: integer
+      offset:
+        description: Offset 起始頁
+        example: 1
+        type: integer
+      txType:
+        description: TxType 交易類別 0：全部 1:in 2:out
+        type: integer
+      type:
+        description: Type 類別 0：全部 1：內轉 2：快速兌換 3：充值 4：提領
+        type: integer
+    type: object
+  docs.DocMarketTransactionList:
+    properties:
+      filterCoinType:
+        description: 'FilterCoinType 法幣: TWD/USD/etc..'
+        example: TWD
+        type: string
+      filterCoinsId:
+        description: FilterCoinsId coins_id
+        type: integer
+      filterPrice:
+        description: FilterPrice 篩選單價<=?
+        type: number
+      filterReceiveMethodsId:
+        description: FilterReceiveMethodsId 查看api /api/v1/users/receive-methods 收款方式對應表
+          {id:name}
+        type: integer
+      filterType:
+        description: FilterType 1:購買 2:出售
+        type: integer
+      limit:
+        description: Limit 每一頁顯示幾筆
+        example: 15
+        type: integer
+      offset:
+        description: Offset 起始頁
+        example: 1
+        type: integer
+    type: object
+  docs.DocOrdersTransaction:
+    properties:
+      amount:
+        type: number
+      ordersId:
+        type: integer
+    type: object
+  docs.DocQuickTransform:
+    properties:
+      amount:
+        description: Amount 數量
+        type: number
+      checkPayPassword:
+        description: CheckPayPassword 安全密碼
+        type: string
+      fromCoinsId:
+        description: FromCoinsId 轉出貨幣
+        type: integer
+      toCoinsId:
+        description: ToCoinsId 轉入貨幣
+        type: integer
+    type: object
+  docs.DocRenewPasswordByForget:
+    properties:
+      code:
+        type: string
+      countryCode:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+    type: object
+  docs.DocSmsSendVerifySms:
+    properties:
+      countryCode:
+        description: CountryCode 國家
+        example: "+886"
+        type: string
+      phone:
+        description: Phone 電話號碼
+        type: string
+      verifyType:
+        description: VerifyType 認證型態:1:註冊2:忘記密碼
+        type: integer
+    type: object
+  docs.DocUpdateUsersReceiveMethod:
+    properties:
+      bankAccount:
+        type: string
+      bankBranchName:
+        type: string
+      bankCode:
+        type: string
+      bankName:
+        type: string
+      bankUserName:
+        type: string
+      id:
+        type: integer
+    type: object
+  docs.DocUploadTradingTransferProve:
+    properties:
+      image:
+        description: |-
+          UploadTime           time.Time `example:"2012-04-23T18:25:43.511Z"`
+          Image 圖片base64
+        example: base64...
+        type: string
+      ordersTransactionsId:
+        type: integer
+      proveCode:
+        description: ProveCode 匯款後幾碼
+        type: string
+    type: object
+  docs.DocUsersCreate:
+    properties:
+      checkPayPassword:
+        description: CheckPayPassword 6位數字
+        type: string
+      code:
+        type: string
+      countryCode:
+        example: "+886"
+        type: string
+      inviteCode:
+        type: string
+      password:
+        description: Password 6位英文+數字
+        type: string
+      phone:
+        type: string
+    type: object
+  docs.DocUsersLogin:
+    properties:
+      countryCode:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+    type: object
+  docs.DocUsersRealName:
+    properties:
+      address:
+        description: Address 地址
+        type: string
+      backImg:
+        description: BackImg 身分證背面
+        type: string
+      birthday:
+        description: Birthday 生日
+        example: "2012-04-23T18:25:43.511Z"
+        type: string
+      country:
+        description: Country 國家
+        type: string
+      frontImg:
+        description: FrontImg 身分證正面
+        type: string
+      idNumber:
+        description: IdNumber 證件號碼
+        type: string
+      name:
+        description: Name 姓名
+        type: string
+      otherImg:
+        description: OtherImg 手持照
+        type: string
+      type:
+        description: Type 1:身分證 2:護照
+        type: integer
+    type: object
+  docs.DocUsersReceiveMethod:
+    properties:
+      bankAccount:
+        type: string
+      bankBranchName:
+        type: string
+      bankCode:
+        type: string
+      bankName:
+        type: string
+      bankUserName:
+        type: string
+      receiveMethodsId:
+        description: ReceiveMethodsId 1:銀行轉帳
+        type: integer
+    type: object
+  docs.DocWithdraw:
+    properties:
+      amount:
+        description: Amount 發送數量
+        type: number
+      checkPayPassword:
+        description: CheckPayPassword 安全密碼
+        type: string
+      coinsId:
+        description: CoinsId 選擇幣種
+        type: integer
+      toAddress:
+        description: ToAddress 到帳地址(ERC20)
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /api/v1/auth/orders/cancel-trading-order:
+    put:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: description
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocCancelTrading'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 取消進行中的訂單
+      tags:
+      - 交易類
+  /api/v1/auth/orders/complaint-trading:
+    put:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: description
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocComplaintTrading'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 提出申訴
+      tags:
+      - 交易類
+  /api/v1/auth/orders/create-transaction:
+    post:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: description
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocCreateTransaction'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 新增訂單
+      tags:
+      - 交易類
+  /api/v1/auth/orders/delete-transaction:
+    delete:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: description
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocDeleteTransaction'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 刪除訂單
+      tags:
+      - 交易類
+  /api/v1/auth/orders/finish-trading-order:
+    put:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: description
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocFinishTradingOrder'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 完成交易中訂單
+      tags:
+      - 交易類
+  /api/v1/auth/orders/get-myself-transaction-list:
+    post:
+      parameters:
+      - description: description
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocMarketTransactionList'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      summary: 獲取我的訂單
+      tags:
+      - 交易類
+  /api/v1/auth/orders/orders-trading-list:
+    get:
+      parameters:
+      - description: 'status array , status: 1.待付款 2.已付款 3.交易完成 4.取消  5檢舉中'
+        in: query
+        items:
+          type: integer
+        name: filterStatusAry
+        type: array
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 獲取交易列表
+      tags:
+      - 交易類
+  /api/v1/auth/orders/orders-transaction:
+    post:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: description
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocOrdersTransaction'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 購買/出售(交易)訂單
+      tags:
+      - 交易類
+  /api/v1/auth/orders/orders-transaction-detail:
+    get:
+      parameters:
+      - description: id
+        in: query
+        name: ordersTransactionsId
+        required: true
+        type: integer
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 獲取訂單詳情
+      tags:
+      - 交易類
+  /api/v1/auth/orders/upload-trading-transfer-prove:
+    put:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: description
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocUploadTradingTransferProve'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 上傳交易證明
+      tags:
+      - 交易類
+  /api/v1/auth/users/get-users-real-name-status:
+    get:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 實名認證狀態
+      tags:
+      - 會員資料相關
+  /api/v1/auth/users/info:
+    get:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{"name":"名字"},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 獲取使用者基本資料
+      tags:
+      - 會員資料相關
+  /api/v1/auth/users/receive-method:
+    delete:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: description
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocGeneralId'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 刪除使用者收款方式
+      tags:
+      - 收款方式
+    get:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 獲取使用者收款方式列表
+      tags:
+      - 收款方式
+    post:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: description
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocUsersReceiveMethod'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 新增使用者收款方式
+      tags:
+      - 收款方式
+    put:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: description
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocUpdateUsersReceiveMethod'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 更新使用者收款方式
+      tags:
+      - 收款方式
+  /api/v1/auth/users/users-real-name:
+    post:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: description
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocUsersRealName'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 實名認證
+      tags:
+      - 會員資料相關
+  /api/v1/auth/users/wallet-info:
+    get:
+      parameters:
+      - description: id
+        in: query
+        name: coinId
+        required: true
+        type: integer
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 獲取單錢包資訊
+      tags:
+      - 錢包頁面
+  /api/v1/auth/users/wallet-info-list:
+    get:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 獲取目前所有錢包資訊
+      tags:
+      - 錢包頁面
+  /api/v1/auth/wallets/get-log-transform:
+    post:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: Required => All
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocLogTransform'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"success"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 交易紀錄
+      tags:
+      - 錢包共用
+  /api/v1/auth/wallets/get-wallet-address:
+    post:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: Required => All
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocGetWalletAddress'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"success"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 取得錢包地址
+      tags:
+      - 錢包共用
+  /api/v1/auth/wallets/inner-transform:
+    post:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: Required => All
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocInnerTransform'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"success"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 內轉
+      tags:
+      - 錢包頁面 / 內轉頁面
+  /api/v1/auth/wallets/quick-transform:
+    post:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: Required => All
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocQuickTransform'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"success"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 閃兌
+      tags:
+      - 錢包頁面 / 閃兌頁面
+  /api/v1/auth/wallets/transform-type:
+    get:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"success"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 取得所有交易類別
+      tags:
+      - 錢包共用
+  /api/v1/auth/wallets/withdraw:
+    post:
+      parameters:
+      - description: default( Base {Add access token here} )
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: Required => All
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocWithdraw'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"success"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: 提現
+      tags:
+      - 錢包頁面 / 提現頁面
+  /api/v1/coin/coins-list:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      summary: 獲取各別幣種id&name
+      tags:
+      - 錢包共用
+  /api/v1/market/transform-market:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      summary: 獲取各別幣種匯率
+      tags:
+      - 錢包共用
+  /api/v1/market/withdraw-market:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      summary: 獲取各別幣種提現手續費
+      tags:
+      - 錢包共用
+  /api/v1/orders/get-transaction-list:
+    post:
+      parameters:
+      - description: description
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocMarketTransactionList'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      summary: 獲取所有訂單
+      tags:
+      - 交易類
+  /api/v1/orders/orders-transactions-status-mapping:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      summary: 交易中狀態對應表 id&status
+      tags:
+      - 交易類
+  /api/v1/sms/send-verify-sms:
+    post:
+      consumes:
+      - application/json
+      description: top description
+      parameters:
+      - description: description
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocSmsSendVerifySms'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{data":{},"msg":"success msg"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      summary: 發送驗證碼
+      tags:
+      - 會員註冊/登入 etc
+  /api/v1/users:
+    post:
+      consumes:
+      - application/json
+      description: top description
+      parameters:
+      - description: Required => All
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocUsersCreate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{data":{},"msg":"success msg"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      summary: 會員註冊
+      tags:
+      - 會員註冊/登入 etc
+  /api/v1/users/login:
+    post:
+      consumes:
+      - application/json
+      description: top description
+      parameters:
+      - description: Required => All
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocUsersLogin'
+      produces:
+      - application/json
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{"token":"auth_token" },"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      summary: 登入
+      tags:
+      - 會員註冊/登入 etc
+  /api/v1/users/receive-methods:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"data":{},"msg":"ok"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      summary: 收款方式對應表 {id:name}
+      tags:
+      - 收款方式
+  /api/v1/users/renew-password-by-forget:
+    put:
+      consumes:
+      - application/json
+      description: top description
+      parameters:
+      - description: Required => All
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/docs.DocRenewPasswordByForget'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{data":{},"msg":"success msg"}'
+          schema:
+            type: string
+        "400":
+          description: '{data":{},"msg":"error msg"}'
+          schema:
+            type: string
+      summary: 修改密碼 -> 忘記密碼
+      tags:
+      - 會員註冊/登入 etc
+swagger: "2.0"

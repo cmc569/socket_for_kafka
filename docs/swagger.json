@@ -1,0 +1,1874 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/api/v1/auth/orders/cancel-trading-order": {
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "交易類"
+                ],
+                "summary": "取消進行中的訂單",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "description",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocCancelTrading"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/orders/complaint-trading": {
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "交易類"
+                ],
+                "summary": "提出申訴",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "description",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocComplaintTrading"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/orders/create-transaction": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "交易類"
+                ],
+                "summary": "新增訂單",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "description",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocCreateTransaction"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/orders/delete-transaction": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "交易類"
+                ],
+                "summary": "刪除訂單",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "description",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocDeleteTransaction"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/orders/finish-trading-order": {
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "交易類"
+                ],
+                "summary": "完成交易中訂單",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "description",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocFinishTradingOrder"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/orders/get-myself-transaction-list": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "交易類"
+                ],
+                "summary": "獲取我的訂單",
+                "parameters": [
+                    {
+                        "description": "description",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocMarketTransactionList"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/orders/orders-trading-list": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "交易類"
+                ],
+                "summary": "獲取交易列表",
+                "parameters": [
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "status array , status: 1.待付款 2.已付款 3.交易完成 4.取消  5檢舉中",
+                        "name": "filterStatusAry",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/orders/orders-transaction": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "交易類"
+                ],
+                "summary": "購買/出售(交易)訂單",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "description",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocOrdersTransaction"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/orders/orders-transaction-detail": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "交易類"
+                ],
+                "summary": "獲取訂單詳情",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "ordersTransactionsId",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/orders/upload-trading-transfer-prove": {
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "交易類"
+                ],
+                "summary": "上傳交易證明",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "description",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocUploadTradingTransferProve"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/users/get-users-real-name-status": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "會員資料相關"
+                ],
+                "summary": "實名認證狀態",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/users/info": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "會員資料相關"
+                ],
+                "summary": "獲取使用者基本資料",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{\"name\":\"名字\"},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/users/receive-method": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "收款方式"
+                ],
+                "summary": "獲取使用者收款方式列表",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "收款方式"
+                ],
+                "summary": "更新使用者收款方式",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "description",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocUpdateUsersReceiveMethod"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "收款方式"
+                ],
+                "summary": "新增使用者收款方式",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "description",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocUsersReceiveMethod"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "收款方式"
+                ],
+                "summary": "刪除使用者收款方式",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "description",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocGeneralId"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/users/users-real-name": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "會員資料相關"
+                ],
+                "summary": "實名認證",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "description",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocUsersRealName"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/users/wallet-info": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "錢包頁面"
+                ],
+                "summary": "獲取單錢包資訊",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "coinId",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/users/wallet-info-list": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "錢包頁面"
+                ],
+                "summary": "獲取目前所有錢包資訊",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/wallets/get-log-transform": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "錢包共用"
+                ],
+                "summary": "交易紀錄",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Required =\u003e All",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocLogTransform"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"success\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/wallets/get-wallet-address": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "錢包共用"
+                ],
+                "summary": "取得錢包地址",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Required =\u003e All",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocGetWalletAddress"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"success\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/wallets/inner-transform": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "錢包頁面 / 內轉頁面"
+                ],
+                "summary": "內轉",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Required =\u003e All",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocInnerTransform"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"success\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/wallets/quick-transform": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "錢包頁面 / 閃兌頁面"
+                ],
+                "summary": "閃兌",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Required =\u003e All",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocQuickTransform"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"success\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/wallets/transform-type": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "錢包共用"
+                ],
+                "summary": "取得所有交易類別",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"success\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/wallets/withdraw": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "錢包頁面 / 提現頁面"
+                ],
+                "summary": "提現",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "default( Base {Add access token here} )",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "Required =\u003e All",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocWithdraw"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"success\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/coin/coins-list": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "錢包共用"
+                ],
+                "summary": "獲取各別幣種id\u0026name",
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/market/transform-market": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "錢包共用"
+                ],
+                "summary": "獲取各別幣種匯率",
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/market/withdraw-market": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "錢包共用"
+                ],
+                "summary": "獲取各別幣種提現手續費",
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/orders/get-transaction-list": {
+            "post": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "交易類"
+                ],
+                "summary": "獲取所有訂單",
+                "parameters": [
+                    {
+                        "description": "description",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocMarketTransactionList"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/orders/orders-transactions-status-mapping": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "交易類"
+                ],
+                "summary": "交易中狀態對應表 id\u0026status",
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/sms/send-verify-sms": {
+            "post": {
+                "description": "top description",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "會員註冊/登入 etc"
+                ],
+                "summary": "發送驗證碼",
+                "parameters": [
+                    {
+                        "description": "description",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocSmsSendVerifySms"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{data\":{},\"msg\":\"success msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/users": {
+            "post": {
+                "description": "top description",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "會員註冊/登入 etc"
+                ],
+                "summary": "會員註冊",
+                "parameters": [
+                    {
+                        "description": "Required =\u003e All",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocUsersCreate"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{data\":{},\"msg\":\"success msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/users/login": {
+            "post": {
+                "description": "top description",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json",
+                    "application/json"
+                ],
+                "tags": [
+                    "會員註冊/登入 etc"
+                ],
+                "summary": "登入",
+                "parameters": [
+                    {
+                        "description": "Required =\u003e All",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocUsersLogin"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{\"token\":\"auth_token\" },\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/users/receive-methods": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "收款方式"
+                ],
+                "summary": "收款方式對應表 {id:name}",
+                "responses": {
+                    "200": {
+                        "description": "{\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/users/renew-password-by-forget": {
+            "put": {
+                "description": "top description",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "會員註冊/登入 etc"
+                ],
+                "summary": "修改密碼 -\u003e 忘記密碼",
+                "parameters": [
+                    {
+                        "description": "Required =\u003e All",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/docs.DocRenewPasswordByForget"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{data\":{},\"msg\":\"success msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "{data\":{},\"msg\":\"error msg\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "docs.DocCancelTrading": {
+            "type": "object",
+            "properties": {
+                "ordersTransactionsId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocComplaintTrading": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "Description 文字說明 / 選擇投訴項目先不用",
+                    "type": "string"
+                },
+                "image": {
+                    "description": "Image 圖片base64",
+                    "type": "string",
+                    "example": "base64..."
+                },
+                "ordersTransactionsId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocCreateTransaction": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "number"
+                },
+                "coinType": {
+                    "description": "CoinType 法幣: TWD/USD/etc..",
+                    "type": "string",
+                    "example": "TWD"
+                },
+                "coinsId": {
+                    "type": "integer"
+                },
+                "minAmount": {
+                    "type": "number"
+                },
+                "note": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "number"
+                },
+                "receiveMethodsId": {
+                    "description": "ReceiveMethodsId 查看api /api/v1/users/receive-methods 收款方式對應表 {id:name}",
+                    "type": "integer"
+                },
+                "type": {
+                    "description": "Type 1:購買 2:出售",
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocDeleteTransaction": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocFinishTradingOrder": {
+            "type": "object",
+            "properties": {
+                "ordersTransactionsId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocGeneralId": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocGetWalletAddress": {
+            "type": "object",
+            "properties": {
+                "coinsId": {
+                    "description": "CoinsId 交易貨幣 1：USDT 2：ETH 3：BTC",
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocInnerTransform": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "description": "Address 錢包地址",
+                    "type": "string"
+                },
+                "amount": {
+                    "description": "Amount 數量",
+                    "type": "number"
+                },
+                "checkPayPassword": {
+                    "description": "CheckPayPassword 安全密碼",
+                    "type": "string"
+                },
+                "fromCoinsId": {
+                    "description": "FromCoinsId 轉出貨幣",
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocLogTransform": {
+            "type": "object",
+            "properties": {
+                "coinsId": {
+                    "description": "CoinsId 交易貨幣 0：全部 1：USDT 2：ETH 3：BTC",
+                    "type": "integer"
+                },
+                "limit": {
+                    "description": "Limit 每一頁顯示幾筆",
+                    "type": "integer",
+                    "example": 15
+                },
+                "offset": {
+                    "description": "Offset 起始頁",
+                    "type": "integer",
+                    "example": 1
+                },
+                "txType": {
+                    "description": "TxType 交易類別 0：全部 1:in 2:out",
+                    "type": "integer"
+                },
+                "type": {
+                    "description": "Type 類別 0：全部 1：內轉 2：快速兌換 3：充值 4：提領",
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocMarketTransactionList": {
+            "type": "object",
+            "properties": {
+                "filterCoinType": {
+                    "description": "FilterCoinType 法幣: TWD/USD/etc..",
+                    "type": "string",
+                    "example": "TWD"
+                },
+                "filterCoinsId": {
+                    "description": "FilterCoinsId coins_id",
+                    "type": "integer"
+                },
+                "filterPrice": {
+                    "description": "FilterPrice 篩選單價\u003c=?",
+                    "type": "number"
+                },
+                "filterReceiveMethodsId": {
+                    "description": "FilterReceiveMethodsId 查看api /api/v1/users/receive-methods 收款方式對應表 {id:name}",
+                    "type": "integer"
+                },
+                "filterType": {
+                    "description": "FilterType 1:購買 2:出售",
+                    "type": "integer"
+                },
+                "limit": {
+                    "description": "Limit 每一頁顯示幾筆",
+                    "type": "integer",
+                    "example": 15
+                },
+                "offset": {
+                    "description": "Offset 起始頁",
+                    "type": "integer",
+                    "example": 1
+                }
+            }
+        },
+        "docs.DocOrdersTransaction": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "number"
+                },
+                "ordersId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocQuickTransform": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "description": "Amount 數量",
+                    "type": "number"
+                },
+                "checkPayPassword": {
+                    "description": "CheckPayPassword 安全密碼",
+                    "type": "string"
+                },
+                "fromCoinsId": {
+                    "description": "FromCoinsId 轉出貨幣",
+                    "type": "integer"
+                },
+                "toCoinsId": {
+                    "description": "ToCoinsId 轉入貨幣",
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocRenewPasswordByForget": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "countryCode": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                }
+            }
+        },
+        "docs.DocSmsSendVerifySms": {
+            "type": "object",
+            "properties": {
+                "countryCode": {
+                    "description": "CountryCode 國家",
+                    "type": "string",
+                    "example": "+886"
+                },
+                "phone": {
+                    "description": "Phone 電話號碼",
+                    "type": "string"
+                },
+                "verifyType": {
+                    "description": "VerifyType 認證型態:1:註冊2:忘記密碼",
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocUpdateUsersReceiveMethod": {
+            "type": "object",
+            "properties": {
+                "bankAccount": {
+                    "type": "string"
+                },
+                "bankBranchName": {
+                    "type": "string"
+                },
+                "bankCode": {
+                    "type": "string"
+                },
+                "bankName": {
+                    "type": "string"
+                },
+                "bankUserName": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocUploadTradingTransferProve": {
+            "type": "object",
+            "properties": {
+                "image": {
+                    "description": "UploadTime           time.Time `example:\"2012-04-23T18:25:43.511Z\"`\nImage 圖片base64",
+                    "type": "string",
+                    "example": "base64..."
+                },
+                "ordersTransactionsId": {
+                    "type": "integer"
+                },
+                "proveCode": {
+                    "description": "ProveCode 匯款後幾碼",
+                    "type": "string"
+                }
+            }
+        },
+        "docs.DocUsersCreate": {
+            "type": "object",
+            "properties": {
+                "checkPayPassword": {
+                    "description": "CheckPayPassword 6位數字",
+                    "type": "string"
+                },
+                "code": {
+                    "type": "string"
+                },
+                "countryCode": {
+                    "type": "string",
+                    "example": "+886"
+                },
+                "inviteCode": {
+                    "type": "string"
+                },
+                "password": {
+                    "description": "Password 6位英文+數字",
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                }
+            }
+        },
+        "docs.DocUsersLogin": {
+            "type": "object",
+            "properties": {
+                "countryCode": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                }
+            }
+        },
+        "docs.DocUsersRealName": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "description": "Address 地址",
+                    "type": "string"
+                },
+                "backImg": {
+                    "description": "BackImg 身分證背面",
+                    "type": "string"
+                },
+                "birthday": {
+                    "description": "Birthday 生日",
+                    "type": "string",
+                    "example": "2012-04-23T18:25:43.511Z"
+                },
+                "country": {
+                    "description": "Country 國家",
+                    "type": "string"
+                },
+                "frontImg": {
+                    "description": "FrontImg 身分證正面",
+                    "type": "string"
+                },
+                "idNumber": {
+                    "description": "IdNumber 證件號碼",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name 姓名",
+                    "type": "string"
+                },
+                "otherImg": {
+                    "description": "OtherImg 手持照",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Type 1:身分證 2:護照",
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocUsersReceiveMethod": {
+            "type": "object",
+            "properties": {
+                "bankAccount": {
+                    "type": "string"
+                },
+                "bankBranchName": {
+                    "type": "string"
+                },
+                "bankCode": {
+                    "type": "string"
+                },
+                "bankName": {
+                    "type": "string"
+                },
+                "bankUserName": {
+                    "type": "string"
+                },
+                "receiveMethodsId": {
+                    "description": "ReceiveMethodsId 1:銀行轉帳",
+                    "type": "integer"
+                }
+            }
+        },
+        "docs.DocWithdraw": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "description": "Amount 發送數量",
+                    "type": "number"
+                },
+                "checkPayPassword": {
+                    "description": "CheckPayPassword 安全密碼",
+                    "type": "string"
+                },
+                "coinsId": {
+                    "description": "CoinsId 選擇幣種",
+                    "type": "integer"
+                },
+                "toAddress": {
+                    "description": "ToAddress 到帳地址(ERC20)",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
